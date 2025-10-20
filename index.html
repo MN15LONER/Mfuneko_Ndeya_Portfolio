@@ -1,11 +1,376 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Mfuneko Ndeya Portfolio</title>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Cybersecurity Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f0f0f0;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: #764ba2;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .cert-item {
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+
+        .cert-item h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #764ba2;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            section {
+                padding: 2rem 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .projects-grid,
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Welcome to My Cybersecurity Portfolio</h1>
-  <p>I’m a second-year Information Systems student passionate about SOC analysis, cloud security, and hands-on learning.</p>
+    <header>
+        <h1>Your Name</h1>
+        <p>Cybersecurity Enthusiast | Network Security | Ethical Hacking</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>
+                    Hello! I'm [Your Name], a passionate cybersecurity enthusiast dedicated to protecting digital infrastructure and solving complex security challenges. My journey into cybersecurity began with a fascination for understanding how systems work and how to defend them against emerging threats.
+                </p>
+                <p>
+                    Currently, I'm focused on developing my skills in network security, penetration testing, and secure application development. My goal is to contribute to building a safer digital world by applying ethical hacking principles and implementing robust security measures. I'm actively seeking opportunities to grow as a security professional and make meaningful contributions to the cybersecurity field.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200" alt="Crime Reporting Website" class="project-image">
+                    <div class="project-content">
+                        <h3>Crime Reporting Website</h3>
+                        <p>A collaborative web application built with my groupmates that allows users to report crimes anonymously. Features include incident mapping, real-time reporting, and secure data handling. Built using PHP, MySQL, and requires Apache server.</p>
+                        <a href="https://github.com/yourusername/project" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200" alt="Project 2" class="project-image">
+                    <div class="project-content">
+                        <h3>Project Name</h3>
+                        <p>Brief description of your project. Explain the technologies used, what problem it solves, and any key features or learning outcomes.</p>
+                        <a href="https://github.com/yourusername/project" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200" alt="Project 3" class="project-image">
+                    <div class="project-content">
+                        <h3>Project Name</h3>
+                        <p>Brief description of your project. Explain the technologies used, what problem it solves, and any key features or learning outcomes.</p>
+                        <a href="https://github.com/yourusername/project" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <h3>Cisco Certification Name</h3>
+                    <p>Issued by Cisco Networking Academy</p>
+                    <p>Completed: Month Year</p>
+                </div>
+
+                <div class="cert-item">
+                    <h3>Cisco Certification Name</h3>
+                    <p>Issued by Cisco Networking Academy</p>
+                    <p>Completed: Month Year</p>
+                </div>
+
+                <div class="cert-item">
+                    <h3>Virtual Internship</h3>
+                    <p>Company/Platform Name</p>
+                    <p>Completed: Month Year</p>
+                </div>
+
+                <div class="cert-item">
+                    <h3>Virtual Internship</h3>
+                    <p>Company/Platform Name</p>
+                    <p>Completed: Month Year</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="videos">
+            <h2>Videos</h2>
+            <div class="videos-grid">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p>I'm always open to discussing new opportunities, collaborations, or cybersecurity topics. Feel free to reach out!</p>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/yourprofile" class="contact-btn">LinkedIn</a>
+                    <a href="mailto:your.email@example.com" class="contact-btn">Email Me</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
 </body>
 </html>
