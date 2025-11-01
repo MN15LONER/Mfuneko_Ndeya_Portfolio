@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mfuneko Ndeya - Portfolio</title>
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #111827;
+      color: #f3f4f6;
+    }
+    /* App Container */
+    .app-container {
+      width: 100%;
+      min-height: 100vh;
+    }
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1.5rem;
+      position: relative;
+    }
+    .hero-content {
+      max-width: 56rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(to right, #22d3ee, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #d1d5db;
+      margin-bottom: 1rem;
+    }
+    .hero-description {
+      font-size: 1.125rem;
+      color: #9ca3af;
+      margin-bottom: 2rem;
+    }
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #06b6d4;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    .hero-button:hover {
+      background-color: #0891b2;
+    }
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      animation: bounce 1s infinite;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .scroll-indicator svg {
+      width: 2rem;
+      height: 2rem;
+      color: #22d3ee;
+    }
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      }
+      50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      }
+    }
+    /* About Section */
+    .about-section {
+      padding: 5rem 1.5rem;
+      background-color: #1f2937;
+    }
+    .about-container {
+      max-width: 72rem;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .section-title .highlight {
+      color: #22d3ee;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-text .profile-picture {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1.5rem;
+      display: block;
+      border: 3px solid #22d3ee;
+    }
+    .about-text p {
+      font-size: 1.125rem;
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .skills-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #22d3ee;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .skill-card {
+      background-color: #111827;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid #374151;
+      transition: border-color 0.3s;
+      text-align: center;
+    }
+    .skill-card:hover {
+      border-color: #06b6d4;
+    }
+    .skill-card svg {
+      width: 2rem;
+      height: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .skill-card h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+    .skill-cyan { color: #22d3ee; }
+    .skill-blue { color: #60a5fa; }
+    .skill-orange { color: #fb923c; }
+    .skill-yellow { color: #facc15; }
+    /* Projects Section */
+    .projects-section {
+      padding: 5rem 1.5rem;
+      background-color: #111827;
+    }
+    .projects-container {
+      max-width: 72rem;
+      margin: 0 auto;
+    }
+    .projects-subtitle {
+      color: #9ca3af;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .project-card {
+      background-color: #1f2937;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      border: 1px solid #374151;
+      transition: border-color 0.3s;
+    }
+    .project-card:hover {
+      border-color: #06b6d4;
+    }
+    .project-image-container {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+    }
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      transition: transform 0.3s;
+    }
+    .project-card:hover .project-image {
+      transform: scale(1.1);
+    }
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    .project-card:hover .project-overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .project-overlay span {
+      color: white;
+      opacity: 0;
+      font-size: 1.125rem;
+      font-weight: 600;
+      transition: opacity 0.3s;
+    }
+    .project-card:hover .project-overlay span {
+      opacity: 1;
+    }
+    .video-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #06b6d4;
+      padding: 0.75rem;
+      border-radius: 9999px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .project-card:hover .video-button {
+      opacity: 1;
+    }
+    .video-button svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: white;
+    }
+    .project-content {
+      padding: 1.5rem;
+    }
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .project-description {
+      color: #9ca3af;
+      margin-bottom: 1rem;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .project-tag {
+      padding: 0.25rem 0.75rem;
+      background-color: #111827;
+      color: #22d3ee;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+    /* Lightbox Modal */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 50;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .lightbox-overlay.active {
+      display: flex;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .lightbox-close:hover {
+      color: #22d3ee;
+    }
+    .lightbox-close svg {
+      width: 2rem;
+      height: 2rem;
+    }
+    .lightbox-content {
+      max-width: 72rem;
+      width: 100%;
+    }
+    .lightbox-content img,
+    .lightbox-content video {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+    }
+    /* Contact Section */
+    .contact-section {
+      padding: 5rem 1.5rem;
+      background-color: #1f2937;
+    }
+    .contact-container {
+      max-width: 56rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact-subtitle {
+      color: #9ca3af;
+      margin-bottom: 3rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .contact-card {
+      background-color: #111827;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      border: 1px solid #374151;
+      transition: border-color 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .contact-card:hover {
+      border-color: #06b6d4;
+    }
+    .contact-card.linkedin:hover {
+      border-color: #3b82f6;
+    }
+    .contact-card.github:hover {
+      border-color: #fb923c;
+    }
+    .contact-card svg {
+      width: 3rem;
+      height: 3rem;
+      margin: 0 auto 1rem;
+      transition: transform 0.3s;
+    }
+    .contact-card:hover svg {
+      transform: scale(1.1);
+    }
+    .contact-card svg.icon-cyan { color: #22d3ee; }
+    .contact-card svg.icon-blue { color: #60a5fa; }
+    .contact-card svg.icon-orange { color: #fb923c; }
+    .contact-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .contact-card p {
+      color: #9ca3af;
+    }
+    .contact-footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #374151;
+    }
+    .contact-footer p {
+      color: #6b7280;
+    }
+    /* Responsive Design */
+    @media (max-width: 767px) {
+      .hero-section {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+      }
+      .hero-content {
+        padding-left: 0;
+        text-align: center;
+      }
+    }
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 4.5rem;
+      }
+      .hero-subtitle {
+        font-size: 1.5rem;
+      }
+      .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .contact-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Mfuneko Ndeya</h1>
+        <p class="hero-subtitle">Bridging Business and Technology Through Code</p>
+        <p class="hero-description">Business Information Technology Student | App Developer | Web Designer</p>
+        <a href="#about" class="hero-button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+          Explore My Work
+        </a>
+      </div>
+      <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="about-container">
+        <h2 class="section-title">About <span class="highlight">Me</span></h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <img src="media/Profile_Picture.png" alt="Profile Picture" class="profile-picture" />
+            <p>I'm a Business Information Technology student with a passion for creating innovative solutions that bridge the gap between business needs and technological possibilities.</p>
+            <p>My focus areas include app development, web design, and automation projects that streamline processes and enhance user experiences. I believe in the power of technology to transform how businesses operate and grow.</p>
+            <p>When I'm not coding, I'm exploring new frameworks, learning about business innovation, and working on projects that challenge me to think creatively about problem-solving.</p>
+          </div>
+          <div>
+            <h3 class="skills-title">Technical Skills</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <svg class="skill-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+                </svg>
+                <h4>C#</h4>
+              </div>
+              <div class="skill-card">
+                <svg class="skill-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                </svg>
+                <h4>SQL</h4>
+              </div>
+              <div class="skill-card">
+                <svg class="skill-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12,2 2,7 12,12 22,7"/>
+                  <polyline points="2,17 12,22 22,17"/>
+                  <polyline points="2,12 12,17 22,12"/>
+                </svg>
+                <h4>HTML/CSS</h4>
+              </div>
+              <div class="skill-card">
+                <svg class="skill-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                <h4>JavaScript</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="projects-container">
+        <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+        <p class="projects-subtitle">A collection of my recent work in app development and web design</p>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image-container">
+              <img src="media/Project_1_Thumbnail.png" alt="F1 Racetrack Weather Tracker" class="project-image" />
+              <button class="project-overlay" onclick="openLightbox('media/Project_1_Thumbnail.png', 'image')">
+                <span>View Full Size</span>
+              </button>
+              <button class="video-button" onclick="openLightbox('media/Weather_API_Project_1.mp4', 'video')" aria-label="Play video">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="5,3 19,12 5,21"/>
+                </svg>
+              </button>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">F1 Racetrack Weather Tracker</h3>
+              <p class="project-description">A website that tracks the weather conditions in F1 racetracks using the weather API</p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image-container">
+              <img src="media/neighbourguard_thumbnail.png" alt="NeighbourGuard" class="project-image" />
+              <button class="project-overlay" onclick="openLightbox('media/neighbourguard_thumbnail.png', 'image')">
+                <span>View Full Size</span>
+              </button>
+              <button class="video-button" onclick="openLightbox('media/Project_2_neighbourguard.mp4', 'video')" aria-label="Play video">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="5,3 19,12 5,21"/>
+                </svg>
+              </button>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">NeighbourGuard</h3>
+              <p class="project-description">A webapp that allows users to view and report crime events in their areas increasing security response and safety in local communities</p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">PHP</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image-container">
+              <img src="media/Muni_Report_Pro_thumbnail.png" alt="Muni Report Pro App" class="project-image" />
+              <button class="project-overlay" onclick="openLightbox('media/Muni_Report_Pro_thumbnail.png', 'image')">
+                <span>View Full Size</span>
+              </button>
+              <button class="video-button" onclick="openLightbox('media/Muni_Report_pro.mp4', 'video')" aria-label="Play video">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="5,3 19,12 5,21"/>
+                </svg>
+              </button>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Muni Report Pro App</h3>
+              <p class="project-description">A mobile app that allows community residents to report service delivery issues in just a few taps whether it's potholes, power outages, or broken streetlights</p>
+              <div class="project-tags">
+                <span class="project-tag">Flutter</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image-container">
+              <img src="media/Mzansi-react-app-thumbnail.png" alt="Mzansi-react" class="project-image" />
+              <button class="project-overlay" onclick="openLightbox('media/Mzansi-react-app-thumbnail.png', 'image')">
+                <span>View Full Size</span>
+              </button>
+              <button class="video-button" onclick="openLightbox('media/MzansiReact-App.mp4', 'video')" aria-label="Play video">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="5,3 19,12 5,21"/>
+                </svg>
+              </button>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Mzansi-react</h3>
+              <p class="project-description">Mzansi-react an app that consolidates prices from multiple stores for users to get the best deals and specials on their favourite stores</p>
+              <div class="project-tags">
+                <span class="project-tag">React Native</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+        <p class="contact-subtitle">I'm always open to discussing new projects, opportunities, or collaborations</p>
+        <div class="contact-grid">
+          <a href="mailto:mfunekondeya83@gmail.com" class="contact-card">
+            <svg class="icon-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <h3>Email</h3>
+            <p>mfunekondeya83@gmail.com</p>
+          </a>
+          <a href="https://www.linkedin.com/in/mfuneko-ndeya-478867362/" target="_blank" rel="noopener noreferrer" class="contact-card linkedin">
+            <svg class="icon-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" width="4"/>
+            </svg>
+            <h3>LinkedIn</h3>
+            <p>Connect with me</p>
+          </a>
+          <a href="https://github.com/MN15LONER" target="_blank" rel="noopener noreferrer" class="contact-card github">
+            <svg class="icon-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            <h3>GitHub</h3>
+            <p>View my code</p>
+          </a>
+        </div>
+        <div class="contact-footer">
+          <p>© 2025 Mfuneko Ndeya. Built with HTML and CSS.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-overlay">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="" style="display: none;" />
+        <video id="lightbox-video" src="" controls style="display: none;"></video>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openLightbox(src, type) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const video = document.getElementById('lightbox-video');
+      if (type === 'image') {
+        img.src = src;
+        img.style.display = 'block';
+        video.style.display = 'none';
+      } else {
+        video.src = src;
+        video.style.display = 'block';
+        img.style.display = 'none';
+      }
+      lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      const video = document.getElementById('lightbox-video');
+      lightbox.classList.remove('active');
+      video.pause();
+      video.currentTime = 0;
+    }
+  </script>
+</body>
+</html>
