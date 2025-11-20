@@ -269,6 +269,33 @@
       height: 1.25rem;
       color: white;
     }
+    .admin-button {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background-color: #3b82f6;
+      padding: 0.75rem;
+      border-radius: 9999px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .project-card:hover .admin-button {
+      opacity: 1;
+    }
+    .admin-button:hover {
+      background-color: #2563eb;
+    }
+    .admin-button svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: white;
+    }
     .project-content {
       padding: 1.5rem;
     }
@@ -637,6 +664,37 @@
                 <span class="project-tag">Web Design</span>
                 <span class="project-tag">HTML</span>
                 <span class="project-tag">CSS</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image-container">
+              <img src="media/RealEstateWebsiteThumbnail.png" alt="Real Estate Website" class="project-image" />
+              <button class="project-overlay" onclick="openLightbox('media/RealEstateWebsiteThumbnail.png', 'image')">
+                <span>View Full Size</span>
+              </button>
+              <a href="https://realestate-9e1da.web.app/admin/login" target="_blank" rel="noopener noreferrer" class="admin-button" aria-label="Admin login" title="Admin Login">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </a>
+              <a href="https://realestate-9e1da.web.app/" target="_blank" rel="noopener noreferrer" class="video-button" aria-label="Visit website">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Real Estate Website</h3>
+              <p class="project-description">A comprehensive real estate platform where agencies can post property listings for users to browse. Features role-based access control with distinct admin and agent privileges, allowing admins full control over the system while agents can manage their listings.</p>
+              <div class="project-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">Firebase</span>
+                <span class="project-tag">Authentication</span>
+                <span class="project-tag">RBAC</span>
               </div>
             </div>
           </div>
