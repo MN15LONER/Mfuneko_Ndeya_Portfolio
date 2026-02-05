@@ -269,6 +269,9 @@
       height: 1.25rem;
       color: white;
     }
+    .download-button {
+      right: 4rem;
+    }
     .project-content {
       padding: 1.5rem;
     }
@@ -660,6 +663,33 @@
               <div class="project-tags">
                 <span class="project-tag">React</span>
                 <span class="project-tag">Tailwind CSS</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image-container">
+              <img src="media/GermanLingo-Thumbnail.jpg" alt="German Lingo" class="project-image" />
+              <button class="project-overlay" onclick="openLightbox('media/GermanLingo-Thumbnail.jpg', 'image')">
+                <span>View Full Size</span>
+              </button>
+              <button class="video-button" onclick="openLightbox('media/GermanLingoAppreview.mp4', 'video')" aria-label="Play video">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="5,3 19,12 5,21"/>
+                </svg>
+              </button>
+              <a href="https://drive.google.com/file/d/1HocZf9L6L7BBrDMiLGwMLlvH4GiOTWWh/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="video-button download-button" aria-label="Download app">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7,10 12,15 17,10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+              </a>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">German Lingo</h3>
+              <p class="project-description">An app that allows you to learn German with a comprehensive video playlist and lesson guide from A1 to C2, featuring AI-powered suggestions and integrated Google Translate.</p>
+              <div class="project-tags">
+                <span class="project-tag">React Native</span>
               </div>
             </div>
           </div>
