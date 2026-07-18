@@ -29,6 +29,93 @@ const PROJECTS = [
     ]
   },
   {
+    slug: "bertrand-cafe",
+    kicker: "Web Design · Hospitality · Johannesburg",
+    name: "Bertrand Café",
+    blurb: "A website for Bertrand Café — a French-inspired café, restaurant, and jazz lounge in Maboneng, Johannesburg.",
+    description:
+      "Bertrand Café sits on Fox Street in Maboneng as part café, part restaurant, part jazz lounge — a Parisian-influenced spot founded by French-Congolese owners who brought Latin Quarter café culture to Joburg. The site needed to carry that same warmth online: morning coffee and croissants on the patio, French-African plates through the day, and evenings of live jazz, karaoke, and wine nights. Built as a clean front door for the venue so visitors can get a feel for the space, the menu, and what's on before they arrive.",
+    tags: ["Web Design", "Hospitality", "Johannesburg"],
+    thumb: "media/BertrandCafeThumbnail.png",
+    gallery: [
+      { type: "image", src: "media/BertrandCafeThumbnail.png" }
+    ],
+    links: [
+      { label: "Visit Site", url: "https://bertrandcafe-a5004.web.app/" }
+    ],
+    specs: [
+      { k: "Role", v: "Designer & Developer" },
+      { k: "Client", v: "Bertrand Café, Maboneng" },
+      { k: "Status", v: "Live" },
+      { k: "Location", v: "Johannesburg" }
+    ]
+  },
+  {
+    slug: "roomiematch",
+    kicker: "Web App · PropTech · South Africa",
+    name: "RoomieMatch ZA",
+    blurb: "A platform that helps tenants find places and compatible roommates — and helps landlords vet applicants with verified income.",
+    description:
+      "RoomieMatch ZA is built for the South African rental market: tenants browse listings across major cities, set preferences around lifestyle, budget, and location, then review roommate profiles before deciding who they actually want to live with. On the landlord side, the platform isn't just another listings board — landlords can screen potential tenants with verified income checks, so they spend less time chasing unreliable applications and more time placing people who can actually pay rent. The goal is a clearer match on both sides of the lease.",
+    tags: ["Web App", "PropTech", "React"],
+    thumb: "media/NewHomeThumbnail.png",
+    gallery: [
+      { type: "image", src: "media/NewHomeThumbnail.png" }
+    ],
+    links: [
+      { label: "Visit Site", url: "https://newhome-4dc82.web.app/" }
+    ],
+    specs: [
+      { k: "Role", v: "Designer & Developer" },
+      { k: "Status", v: "Live" },
+      { k: "Focus", v: "Roommate matching & tenant vetting" }
+    ]
+  },
+  {
+    slug: "shakers-cocktail-bar",
+    kicker: "Web Design · Nightlife · Johannesburg",
+    name: "Shakers Cocktail Bar",
+    blurb: "A website for Shakers — a cocktail and nightlife venue in Maboneng / Jeppestown, Johannesburg.",
+    description:
+      "Shakers Cocktail Bar has been a fixture of the Maboneng nightlife scene since 2016 — cocktails, food, music, and late nights on Commissioner Street. The site was designed to match that energy: a clear look at the venue, the vibe, and enough information for first-timers and regulars to know what they're walking into. Focused on atmosphere and discoverability so the bar's online presence keeps pace with what happens on the floor.",
+    tags: ["Web Design", "Nightlife", "Johannesburg"],
+    thumb: "media/ShakersThumbnail.png",
+    gallery: [
+      { type: "image", src: "media/ShakersThumbnail.png" }
+    ],
+    links: [
+      { label: "Visit Site", url: "https://shakerscocktailbar-9af2c.web.app/" }
+    ],
+    specs: [
+      { k: "Role", v: "Designer & Developer" },
+      { k: "Client", v: "Shakers Cocktail Bar, Maboneng" },
+      { k: "Status", v: "Live" },
+      { k: "Location", v: "Johannesburg" }
+    ]
+  },
+  {
+    slug: "six-cocktail-bar",
+    kicker: "Web Design · Nightlife · Johannesburg",
+    name: "SIX Cocktail Bar",
+    blurb: "A website for SIX — a long-running cocktail bar and restaurant in Melville, Johannesburg.",
+    description:
+      "SIX Cocktail Bar is one of Melville's best-known cocktail spots — dozens of drinks on the menu, long happy hours, food late into the night, and a regular crowd that treats it as a neighbourhood staple. The website gives the bar a polished digital presence that reflects the venue: cocktails front and centre, enough atmosphere to feel like Melville, and a straightforward path for visitors to learn about the place before they show up on 3rd Avenue.",
+    tags: ["Web Design", "Nightlife", "Johannesburg"],
+    thumb: "media/SixCocktailBarThumbnail.png",
+    gallery: [
+      { type: "image", src: "media/SixCocktailBarThumbnail.png" }
+    ],
+    links: [
+      { label: "Visit Site", url: "https://sixcocktailbar-543f9.web.app/" }
+    ],
+    specs: [
+      { k: "Role", v: "Designer & Developer" },
+      { k: "Client", v: "SIX Cocktail Bar, Melville" },
+      { k: "Status", v: "Live" },
+      { k: "Location", v: "Johannesburg" }
+    ]
+  },
+  {
     slug: "f1-weather-tracker",
     kicker: "Web App · Sports Data",
     name: "F1 Racetrack Weather Tracker",
