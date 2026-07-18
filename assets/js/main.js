@@ -80,6 +80,28 @@ function renderProjectGrid(containerId) {
 }
 
 /* ============================================================
+   Render certifications list on the homepage
+   ============================================================ */
+function renderCertifications(containerId) {
+  const el = document.getElementById(containerId);
+  if (!el || typeof CERTIFICATIONS === "undefined") return;
+
+  el.innerHTML = CERTIFICATIONS.map(
+    (c, i) => `
+    <a href="${c.file}" target="_blank" rel="noopener noreferrer" class="cert-row reveal" style="transition-delay:${(i % 6) * 40}ms">
+      <div class="cert-meta">
+        <span class="cert-category">${c.category}</span>
+        <h3 class="cert-title">${c.title}</h3>
+        <span class="cert-issuer">${c.issuer}</span>
+      </div>
+      <span class="cert-action">View PDF →</span>
+    </a>`
+  ).join("");
+
+  initReveal();
+}
+
+/* ============================================================
    Hero terminal typing effect
    ============================================================ */
 function initHeroTerminal() {
@@ -135,4 +157,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   initHeroTerminal();
   renderProjectGrid("projects-grid");
+  renderCertifications("certs-list");
 });
