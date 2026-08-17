@@ -293,6 +293,31 @@ const PROJECTS = [
       { k: "Role", v: "Solo Developer" },
       { k: "Stack", v: "React Native" }
     ]
+  },
+  {
+    slug: "wakimania",
+    kicker: "Mobile App · Multiplayer Party Game",
+    name: "Wakimania",
+    blurb: "A playful multiplayer party game that bundles quick social mini-games, including Heads Up-style charades, into one shared room experience.",
+    description:
+      "Wakimania is a fun multiplayer party-game app designed to get a group playing together quickly. Players can create or join a room, gather in a shared lobby, and compete across a bundle of fast mini-games — including Heads Up-style charades and trivia rounds. The app keeps everyone in sync with room codes, live player lists, answer selection, countdown timers, and an ongoing leaderboard, turning a phone-based game session into a lively group event.",
+    tags: ["Mobile App", "Multiplayer", "Game"],
+    thumb: "media/Home_Screen.jpg",
+    gallery: [
+      { type: "image", src: "media/Home_Screen.jpg" },
+      { type: "image", src: "media/Host_Room_Screen.jpg" },
+      { type: "image", src: "media/Dashboard_Screen.jpg" },
+      { type: "image", src: "media/Level_1_Screen.jpg" }
+    ],
+    links: [
+      { label: "Download App", url: "https://drive.google.com/file/d/1ZiNj5viPV8ZwcV92wHCVo6pQJkemICFk/view?usp=sharing" }
+    ],
+    specs: [
+      { k: "Role", v: "Solo Developer" },
+      { k: "Type", v: "Multiplayer party game" },
+      { k: "Features", v: "Room codes, lobby, mini-games & live leaderboard" },
+      { k: "Platform", v: "Android" }
+    ]
   }
 ];
 
