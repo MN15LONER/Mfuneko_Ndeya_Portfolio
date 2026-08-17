@@ -338,6 +338,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
 }
 .project-thumb img {
+  display: block;
   width: 100%; height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
@@ -608,9 +609,32 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
   background: var(--surface);
   position: relative;
+  aspect-ratio: 16 / 9;
 }
-.gallery-item img, .gallery-item video { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.gallery-item img, .gallery-item video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .gallery-item.wide { grid-column: 1 / -1; }
+
+/* Wakimania is an app showcase: keep each portrait screen fully visible. */
+.gallery--wakimania .gallery-item {
+  width: min(100%, 21rem);
+  justify-self: center;
+  aspect-ratio: 9 / 20;
+  padding: 0.4rem;
+  display: grid;
+  place-items: center;
+  background: #101216;
+}
+.gallery--wakimania .gallery-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
 
 /* Video play affordance — always visible so demos aren't mistaken for stills */
 .gallery-item--video::after {
