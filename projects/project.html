@@ -61,7 +61,7 @@
 
       document.getElementById("page-title").textContent = project.name + " — Mfuneko Ndeya";
 
-      const galleryHtml = project.gallery
+      const galleryItemsHtml = project.gallery
         .map((item, i) => {
           const src = mediaPath(item.src);
           const wideClass = i === 0 && project.gallery.length % 2 !== 0 ? " wide" : "";
@@ -77,10 +77,19 @@
                     </div>`;
           }
           return `<div class="gallery-item${wideClass}" onclick="openLightbox('${src}', 'image')">
-                    <img src="${src}" alt="${project.name}" loading="lazy" />
+                    <img src="${src}" alt="${project.name}" loading="${project.slug === "wakimania" ? "eager" : "lazy"}" />
                   </div>`;
         })
         .join("");
+
+      const isMarquee = project.slug === "wakimania";
+      const galleryInner = isMarquee
+        ? `<div class="gallery-marquee" aria-label="${project.name} screenshots">
+             <div class="gallery-marquee-track">
+               ${galleryItemsHtml}
+             </div>
+           </div>`
+        : galleryItemsHtml;
 
       const linksHtml = project.links
         .map(
@@ -108,7 +117,7 @@
 
         <section class="section">
           <div class="container">
-            <div class="gallery${project.slug === "wakimania" ? " gallery--wakimania" : ""}">${galleryHtml}</div>
+            <div class="gallery${project.slug === "wakimania" ? " gallery--wakimania" : project.slug === "spes" ? " gallery--spes" : ""}">${galleryInner}</div>
 
             <div class="detail-columns">
               <div>
@@ -138,6 +147,67 @@
       root.appendChild(nav);
 
       initReveal();
+      initMarqueeGallery();
+    }
+
+    function initMarqueeGallery() {
+      const gallery = document.querySelector(".gallery--wakimania");
+      const track = gallery && gallery.querySelector(".gallery-marquee-track");
+      if (!track) return;
+
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const seed = Array.from(track.children);
+      if (!seed.length) return;
+
+      function duplicateHalf() {
+        const originals = Array.from(track.children);
+        originals.forEach((node) => {
+          const clone = node.cloneNode(true);
+          clone.setAttribute("aria-hidden", "true");
+          clone.querySelectorAll("img").forEach((img) => img.removeAttribute("alt"));
+          track.appendChild(clone);
+        });
+      }
+
+      function fillTrack() {
+        track.replaceChildren(...seed.map((node) => node.cloneNode(true)));
+        if (reduced) return;
+
+        const minWidth = Math.max(gallery.offsetWidth, window.innerWidth);
+        let guard = 0;
+        while (track.scrollWidth < minWidth && guard < 12) {
+          seed.forEach((node) => {
+            const clone = node.cloneNode(true);
+            clone.setAttribute("aria-hidden", "true");
+            clone.querySelectorAll("img").forEach((img) => img.removeAttribute("alt"));
+            track.appendChild(clone);
+          });
+          guard += 1;
+        }
+        duplicateHalf();
+
+        const distance = track.scrollWidth / 2;
+        const pxPerSec = 18;
+        track.style.animationDuration = `${Math.max(64, Math.round(distance / pxPerSec))}s`;
+      }
+
+      fillTrack();
+      const imgs = Array.from(track.querySelectorAll("img"));
+      if (imgs.some((img) => !img.complete)) {
+        Promise.all(
+          imgs.map((img) =>
+            img.complete
+              ? Promise.resolve()
+              : new Promise((resolve) => img.addEventListener("load", resolve, { once: true }))
+          )
+        ).then(fillTrack);
+      }
+
+      let resizeTimer;
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(fillTrack, 200);
+      });
     }
 
     document.addEventListener("DOMContentLoaded", renderProject);

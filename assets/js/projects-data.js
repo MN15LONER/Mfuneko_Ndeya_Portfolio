@@ -8,6 +8,26 @@
 
 const PROJECTS = [
   {
+    slug: "spes",
+    kicker: "Browser Extension · AI · Productivity",
+    name: "SPES",
+    blurb: "An AI-powered browser extension that tracks job applications, keeps a search streak, and tailors CVs, cover letters, and form fills to each role.",
+    description:
+      "SPES is my first browser extension — I built it to learn how extensions work and what they can actually do, while solving a problem I kept running into. It's an AI-powered job application tracker that keeps the whole search in one place: save, manage, and track every application, with a streak that shows how consistently you've been applying. For each role, SPES tailors your CV and cover letter to that job's requirements and description, then auto-fills application forms from your profile and saved information so the repetitive parts of applying take less time.",
+    tags: ["Browser Extension", "AI", "Productivity"],
+    thumb: "media/SpesLogo.png",
+    gallery: [
+      { type: "image", src: "media/SpesInfographic.jpg" }
+    ],
+    links: [],
+    specs: [
+      { k: "Role", v: "Solo Developer" },
+      { k: "Type", v: "Browser extension" },
+      { k: "Focus", v: "Job application workflow" },
+      { k: "Features", v: "Tracker, streaks, AI CV & cover letters, form auto-fill" }
+    ]
+  },
+  {
     slug: "fluentedge",
     kicker: "Web App · Online Education",
     name: "FluentEdge",
@@ -300,17 +320,15 @@ const PROJECTS = [
     name: "Wakimania",
     blurb: "A playful multiplayer party game that bundles quick social mini-games, including Heads Up-style charades, into one shared room experience.",
     description:
-      "Wakimania is a fun multiplayer party-game app designed to get a group playing together quickly. Players can create or join a room, gather in a shared lobby, and compete across a bundle of fast mini-games — including Heads Up-style charades and trivia rounds. The app keeps everyone in sync with room codes, live player lists, answer selection, countdown timers, and an ongoing leaderboard, turning a phone-based game session into a lively group event.",
+      "Wakimania is a fun multiplayer party game app designed to get a group playing together quickly. Players can create or join a room, gather in a shared lobby, and compete across a bundle of fast mini-games — including Heads Up-style charades and trivia rounds. The app keeps everyone in sync with room codes, live player lists, answer selection, countdown timers, and an ongoing leaderboard, turning a phone-based game session into a lively group event.",
     tags: ["Mobile App", "Multiplayer", "Game"],
-    thumb: "media/Home_Screen.jpg",
+    thumb: "media/WakiManiaScreen1.png",
     gallery: [
-      { type: "image", src: "media/Home_Screen.jpg" },
-      { type: "image", src: "media/Host_Room_Screen.jpg" },
-      { type: "image", src: "media/Dashboard_Screen.jpg" },
-      { type: "image", src: "media/Level_1_Screen.jpg" }
+      { type: "image", src: "media/WakiManiaScreen2.png" },
+      { type: "image", src: "media/WakiManiaScreen3.png" }
     ],
     links: [
-      { label: "Download App", url: "https://drive.google.com/file/d/1ZiNj5viPV8ZwcV92wHCVo6pQJkemICFk/view?usp=sharing" }
+      { label: "Download App", url: "https://drive.google.com/file/d/1QO2CzwS3nq3CssG0BQ3BYvPyj5O07BIV/view?usp=sharing" }
     ],
     specs: [
       { k: "Role", v: "Solo Developer" },
