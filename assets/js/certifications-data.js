@@ -1,9 +1,15 @@
 /* ============================================================
    CERTIFICATIONS DATA
-   Drop PDFs into /certifications/ and add an entry below.
+   Drop PDFs or images into /certifications/ and add an entry below.
    ============================================================ */
 
 const CERTIFICATIONS = [
+  {
+    title: "Hack<IT> 2026",
+    issuer: "Entelect",
+    category: "Hackathon",
+    file: "certifications/entelect-hack-it-2026.png"
+  },
   {
     title: "AWS Cloud Practitioner Essentials",
     issuer: "Amazon Web Services",

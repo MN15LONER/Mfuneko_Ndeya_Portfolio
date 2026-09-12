@@ -52,11 +52,21 @@ document.addEventListener("keydown", (e) => {
 /* ============================================================
    Render project cards on the homepage
    ============================================================ */
-function renderProjectGrid(containerId) {
+function renderProjectGrid(containerId, track) {
   const el = document.getElementById(containerId);
   if (!el || typeof PROJECTS === "undefined") return;
 
-  el.innerHTML = PROJECTS.map((p, i) => {
+  const list = PROJECTS.filter((p) => (p.track || "default") === (track || "default"));
+  if (!list.length) {
+    const empty =
+      track === "cyber"
+        ? "Security labs and writeups will show up here."
+        : "No projects in this section yet.";
+    el.innerHTML = `<p class="projects-empty">${empty}</p>`;
+    return;
+  }
+
+  el.innerHTML = list.map((p, i) => {
     const hasVideo = p.gallery.some((item) => item.type === "video");
     return `
     <a href="projects/project.html?slug=${p.slug}" class="project-card reveal" style="transition-delay:${(i % 4) * 60}ms">
@@ -86,17 +96,24 @@ function renderCertifications(containerId) {
   const el = document.getElementById(containerId);
   if (!el || typeof CERTIFICATIONS === "undefined") return;
 
-  el.innerHTML = CERTIFICATIONS.map(
-    (c, i) => `
+  const escapeHtml = (s) =>
+    String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+
+  el.innerHTML = CERTIFICATIONS.map((c, i) => {
+    const action = c.file.toLowerCase().endsWith(".pdf") ? "View PDF →" : "View certificate →";
+    return `
     <a href="${c.file}" target="_blank" rel="noopener noreferrer" class="cert-row reveal" style="transition-delay:${(i % 6) * 40}ms">
       <div class="cert-meta">
-        <span class="cert-category">${c.category}</span>
-        <h3 class="cert-title">${c.title}</h3>
-        <span class="cert-issuer">${c.issuer}</span>
+        <span class="cert-category">${escapeHtml(c.category)}</span>
+        <h3 class="cert-title">${escapeHtml(c.title)}</h3>
+        <span class="cert-issuer">${escapeHtml(c.issuer)}</span>
       </div>
-      <span class="cert-action">View PDF →</span>
-    </a>`
-  ).join("");
+      <span class="cert-action">${action}</span>
+    </a>`;
+  }).join("");
 
   initReveal();
 }
@@ -156,6 +173,7 @@ function initHeroTerminal() {
 document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   initHeroTerminal();
-  renderProjectGrid("projects-grid");
+  renderProjectGrid("projects-grid", "default");
+  renderProjectGrid("cyber-projects-grid", "cyber");
   renderCertifications("certs-list");
 });

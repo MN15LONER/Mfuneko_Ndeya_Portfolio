@@ -3,7 +3,8 @@
    To add a new project: copy an object below, give it a unique
    `slug` (used in the URL: project.html?slug=your-slug), and
    fill in the fields. Drop media into /media/ and reference it
-   the same way the others do.
+   the same way the others do. Set `track: "cyber"` to list a
+   project in the cybersecurity section instead of Selected work.
    ============================================================ */
 
 const PROJECTS = [
@@ -19,7 +20,9 @@ const PROJECTS = [
     gallery: [
       { type: "image", src: "media/SpesInfographic.jpg" }
     ],
-    links: [],
+    links: [
+      { label: "View on GitHub", url: "https://github.com/christianmoodly-hub/Spec" }
+    ],
     specs: [
       { k: "Role", v: "Solo Developer" },
       { k: "Type", v: "Browser extension" },
