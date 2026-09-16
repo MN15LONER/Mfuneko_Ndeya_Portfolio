@@ -692,6 +692,15 @@ a { color: inherit; text-decoration: none; }
   object-fit: contain;
   object-position: top center;
 }
+.gallery--spes .gallery-item--video {
+  aspect-ratio: 16 / 9;
+  background: #0d1013;
+}
+.gallery--spes .gallery-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 /* Wakimania: slow right-to-left strip so each poster can be read. */
 .gallery--wakimania {

@@ -18,7 +18,8 @@ const PROJECTS = [
     tags: ["Browser Extension", "AI", "Productivity"],
     thumb: "media/SpesLogo.png",
     gallery: [
-      { type: "image", src: "media/SpesInfographic.jpg" }
+      { type: "image", src: "media/SpesInfographic.jpg" },
+      { type: "video", src: "media/SpesDemoVideo.mp4" }
     ],
     links: [
       { label: "View on GitHub", url: "https://github.com/christianmoodly-hub/Spec" }
