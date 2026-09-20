@@ -13,9 +13,9 @@ const PROJECTS = [
     kicker: "Mobile App · GovTech · Career Guidance",
     name: "Khetha / NCAP Career Advice",
     blurb:
-      "A multilingual mobile app that helps South African learners and work-seekers make informed career and study decisions using the official National Career Advice Portal (NCAP) catalogue — with an AI assistant (Khetha) that answers in their language and navigates them to real careers, qualifications, institutions, and bursaries.",
+      "A multilingual mobile app that helps South African learners and work seekers make informed career and study decisions using the official National Career Advice Portal (NCAP) catalogue — with an AI assistant (Khetha) that answers in their language and navigates them to real careers, qualifications, institutions, and bursaries.",
     description:
-      "Khetha is an Expo (React Native) mobile client for DHET’s National Career Advice Portal. It turns fragmented career advice — occupations, SAQA-aligned qualifications, public universities and TVET colleges, and bursaries — into a guided journey on the phone. Users can explore the official catalogue, run decision tools (subject choice, career interest profiling, job fit, APS calculator), save favourites, and reach the DHET helpline. The in-app assistant Khetha (Google Gemini via Firebase AI Logic) is grounded on NCAP data through tool calling, so answers come from the catalogue rather than generic model knowledge. The UI and assistant support South Africa’s 11 official languages, with voice input and accessibility features (text scaling, high contrast, hands-free listen triggers). Offline caching keeps core directory content usable when connectivity is poor. Built for the GovTech 2026 hackathon context as a production-shaped prototype: TypeScript throughout, Firebase Auth/Firestore/Functions, and EAS builds for Android.",
+      "Khetha is an Expo (React Native) mobile client for DHET’s National Career Advice Portal. It turns fragmented career advice — occupations, SAQA aligned qualifications, public universities and TVET colleges, and bursaries — into a guided journey on the phone. Users can explore the official catalogue, run decision tools (subject choice, career interest profiling, job fit, APS calculator), save favourites, and reach the DHET helpline. The in-app assistant Khetha (Google Gemini via Firebase AI Logic) is grounded on NCAP data through tool calling, so answers come from the catalogue rather than generic model knowledge. The UI and assistant support South Africa’s 11 official languages, with voice input and accessibility features (text scaling, high contrast, hands free listen triggers). Offline caching keeps core directory content usable when connectivity is poor. Built for the GovTech 2026 hackathon context as a production shaped prototype: TypeScript throughout, Firebase Auth/Firestore/Functions, and EAS builds for Android.",
     tags: ["Mobile App", "GovTech", "Expo", "AI"],
     thumb: "media/KhethaScreen1.png",
     marquee: true,
@@ -31,10 +31,10 @@ const PROJECTS = [
     ],
     specs: [
       { k: "Role", v: "Solo Developer" },
-      { k: "Type", v: "DHET / NCAP career-guidance app" },
+      { k: "Type", v: "DHET / NCAP career guidance app" },
       { k: "Stack", v: "Expo · React Native · TypeScript · Firebase · Gemini" },
       { k: "Features", v: "Grounded AI, 11 languages, questionnaires, directory, offline catalogue" },
-      { k: "Context", v: "GovTech 2026 / DHET career-advice challenge" },
+      { k: "Context", v: "GovTech 2026 / DHET career advice challenge" },
       { k: "Platform", v: "Android (EAS)" }
     ]
   },
