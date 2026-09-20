@@ -77,12 +77,12 @@
                     </div>`;
           }
           return `<div class="gallery-item${wideClass}" onclick="openLightbox('${src}', 'image')">
-                    <img src="${src}" alt="${project.name}" loading="${project.slug === "wakimania" ? "eager" : "lazy"}" />
+                    <img src="${src}" alt="${project.name}" loading="${project.marquee ? "eager" : "lazy"}" />
                   </div>`;
         })
         .join("");
 
-      const isMarquee = project.slug === "wakimania";
+      const isMarquee = !!project.marquee;
       const galleryInner = isMarquee
         ? `<div class="gallery-marquee" aria-label="${project.name} screenshots">
              <div class="gallery-marquee-track">
@@ -117,7 +117,7 @@
 
         <section class="section">
           <div class="container">
-            <div class="gallery${project.slug === "wakimania" ? " gallery--wakimania" : project.slug === "spes" ? " gallery--spes" : ""}">${galleryInner}</div>
+            <div class="gallery${isMarquee ? " gallery--marquee" : project.slug === "spes" ? " gallery--spes" : ""}">${galleryInner}</div>
 
             <div class="detail-columns">
               <div>
@@ -151,7 +151,7 @@
     }
 
     function initMarqueeGallery() {
-      const gallery = document.querySelector(".gallery--wakimania");
+      const gallery = document.querySelector(".gallery--marquee");
       const track = gallery && gallery.querySelector(".gallery-marquee-track");
       if (!track) return;
 

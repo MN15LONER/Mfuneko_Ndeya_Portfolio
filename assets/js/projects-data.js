@@ -9,6 +9,36 @@
 
 const PROJECTS = [
   {
+    slug: "khetha",
+    kicker: "Mobile App · GovTech · Career Guidance",
+    name: "Khetha / NCAP Career Advice",
+    blurb:
+      "A multilingual mobile app that helps South African learners and work-seekers make informed career and study decisions using the official National Career Advice Portal (NCAP) catalogue — with an AI assistant (Khetha) that answers in their language and navigates them to real careers, qualifications, institutions, and bursaries.",
+    description:
+      "Khetha is an Expo (React Native) mobile client for DHET’s National Career Advice Portal. It turns fragmented career advice — occupations, SAQA-aligned qualifications, public universities and TVET colleges, and bursaries — into a guided journey on the phone. Users can explore the official catalogue, run decision tools (subject choice, career interest profiling, job fit, APS calculator), save favourites, and reach the DHET helpline. The in-app assistant Khetha (Google Gemini via Firebase AI Logic) is grounded on NCAP data through tool calling, so answers come from the catalogue rather than generic model knowledge. The UI and assistant support South Africa’s 11 official languages, with voice input and accessibility features (text scaling, high contrast, hands-free listen triggers). Offline caching keeps core directory content usable when connectivity is poor. Built for the GovTech 2026 hackathon context as a production-shaped prototype: TypeScript throughout, Firebase Auth/Firestore/Functions, and EAS builds for Android.",
+    tags: ["Mobile App", "GovTech", "Expo", "AI"],
+    thumb: "media/KhethaScreen1.png",
+    marquee: true,
+    gallery: [
+      { type: "image", src: "media/KhethaScreen2.png" },
+      { type: "image", src: "media/KhethaScreen3.png" },
+      { type: "image", src: "media/KhethaScreen4.png" },
+      { type: "image", src: "media/KhethaScreen5.png" },
+      { type: "image", src: "media/KhethaScreen6.png" }
+    ],
+    links: [
+      { label: "Download App", url: "https://drive.google.com/file/d/19cnNlYyaA0fi0cGrk7vxpUCoUXenZgk2/view?usp=sharing" }
+    ],
+    specs: [
+      { k: "Role", v: "Solo Developer" },
+      { k: "Type", v: "DHET / NCAP career-guidance app" },
+      { k: "Stack", v: "Expo · React Native · TypeScript · Firebase · Gemini" },
+      { k: "Features", v: "Grounded AI, 11 languages, questionnaires, directory, offline catalogue" },
+      { k: "Context", v: "GovTech 2026 / DHET career-advice challenge" },
+      { k: "Platform", v: "Android (EAS)" }
+    ]
+  },
+  {
     slug: "spes",
     kicker: "Browser Extension · AI · Productivity",
     name: "SPES",
@@ -327,6 +357,7 @@ const PROJECTS = [
       "Wakimania is a fun multiplayer party game app designed to get a group playing together quickly. Players can create or join a room, gather in a shared lobby, and compete across a bundle of fast mini-games — including Heads Up-style charades and trivia rounds. The app keeps everyone in sync with room codes, live player lists, answer selection, countdown timers, and an ongoing leaderboard, turning a phone-based game session into a lively group event.",
     tags: ["Mobile App", "Multiplayer", "Game"],
     thumb: "media/WakiManiaScreen1.png",
+    marquee: true,
     gallery: [
       { type: "image", src: "media/WakiManiaScreen2.png" },
       { type: "image", src: "media/WakiManiaScreen3.png" }

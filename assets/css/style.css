@@ -399,6 +399,13 @@ a { color: inherit; text-decoration: none; }
   object-fit: contain;
   object-position: center;
 }
+.project-thumb--khetha {
+  background: #1f7a3a;
+}
+.project-thumb--khetha img {
+  object-fit: contain;
+  object-position: center;
+}
 .project-thumb .video-badge {
   position: absolute;
   top: 0.75rem;
@@ -702,8 +709,8 @@ a { color: inherit; text-decoration: none; }
   object-fit: contain;
 }
 
-/* Wakimania: slow right-to-left strip so each poster can be read. */
-.gallery--wakimania {
+/* Slow right-to-left strip so each app poster can be read. */
+.gallery--marquee {
   display: block;
   overflow: hidden;
   padding: 0.4rem 0;
@@ -721,11 +728,11 @@ a { color: inherit; text-decoration: none; }
   animation: gallery-marquee 72s linear infinite;
   will-change: transform;
 }
-.gallery--wakimania:hover .gallery-marquee-track,
-.gallery--wakimania:focus-within .gallery-marquee-track {
+.gallery--marquee:hover .gallery-marquee-track,
+.gallery--marquee:focus-within .gallery-marquee-track {
   animation-play-state: paused;
 }
-.gallery--wakimania .gallery-item {
+.gallery--marquee .gallery-item {
   flex: 0 0 auto;
   width: auto;
   height: auto;
@@ -735,7 +742,7 @@ a { color: inherit; text-decoration: none; }
   background: transparent;
   border-radius: 0;
 }
-.gallery--wakimania .gallery-item img {
+.gallery--marquee .gallery-item img {
   height: clamp(20rem, 58vh, 32rem);
   width: auto;
   max-width: none;
@@ -747,7 +754,7 @@ a { color: inherit; text-decoration: none; }
   to { transform: translate3d(-50%, 0, 0); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .gallery--wakimania {
+  .gallery--marquee {
     overflow-x: auto;
     mask-image: none;
     -webkit-mask-image: none;

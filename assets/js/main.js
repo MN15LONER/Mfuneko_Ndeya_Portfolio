@@ -70,7 +70,7 @@ function renderProjectGrid(containerId, track) {
     const hasVideo = p.gallery.some((item) => item.type === "video");
     return `
     <a href="projects/project.html?slug=${p.slug}" class="project-card reveal" style="transition-delay:${(i % 4) * 60}ms">
-      <div class="project-thumb${p.slug === "spes" ? " project-thumb--spes" : p.slug === "wakimania" ? " project-thumb--wakimania" : ""}">
+      <div class="project-thumb${p.slug === "spes" ? " project-thumb--spes" : p.slug === "wakimania" ? " project-thumb--wakimania" : p.slug === "khetha" ? " project-thumb--khetha" : ""}">
         <img src="${p.thumb}" alt="${p.name}" loading="lazy" />
         ${hasVideo ? `<span class="video-badge" aria-label="Includes video"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg> Video</span>` : ""}
         <span class="view-tag">View project →</span>
