@@ -127,9 +127,9 @@ function initHeroTerminal() {
 
   const lines = [
     { text: "$ whoami", cls: "prompt" },
-    { text: "mfuneko_ndeya — dev & AI agent builder", cls: "" },
+    { text: "mfuneko_ndeya: dev & AI agent builder", cls: "" },
     { text: "$ cat current_project.md", cls: "prompt" },
-    { text: "Project Me — voice-controlled desktop agent", cls: "" },
+    { text: "Project Me: voice-controlled desktop agent", cls: "" },
     { text: "  Eyes · Ears · Brain · Hands · Memory", cls: "" },
     { text: "$ status", cls: "prompt" },
     { text: "✓ agent pipeline online", cls: "ok" },

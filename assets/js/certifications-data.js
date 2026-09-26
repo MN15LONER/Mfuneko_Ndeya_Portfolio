@@ -29,7 +29,7 @@ const CERTIFICATIONS = [
     file: "certifications/aws-security-fundamentals.pdf"
   },
   {
-    title: "AWS Security — Encryption Fundamentals",
+    title: "AWS Security: Encryption Fundamentals",
     issuer: "Amazon Web Services",
     category: "Cloud · Security",
     file: "certifications/aws-security-encryption.pdf"
@@ -47,7 +47,7 @@ const CERTIFICATIONS = [
     file: "certifications/networking-basics.pdf"
   },
   {
-    title: "AIG Shields Up — Cybersecurity Job Simulation",
+    title: "AIG Shields Up: Cybersecurity Job Simulation",
     issuer: "AIG · Forage",
     category: "Cybersecurity",
     file: "certifications/aig-shields-up-cybersecurity.pdf"

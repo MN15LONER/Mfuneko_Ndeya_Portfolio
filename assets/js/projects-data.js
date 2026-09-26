@@ -13,9 +13,9 @@ const PROJECTS = [
     kicker: "Mobile App · GovTech · Career Guidance",
     name: "Khetha / NCAP Career Advice",
     blurb:
-      "A multilingual mobile app that helps South African learners and work seekers make informed career and study decisions using the official National Career Advice Portal (NCAP) catalogue — with an AI assistant (Khetha) that answers in their language and navigates them to real careers, qualifications, institutions, and bursaries.",
+      "A multilingual mobile app that helps South African learners and work seekers make informed career and study decisions using the official National Career Advice Portal (NCAP) catalogue, with an AI assistant (Khetha) that answers in their language and navigates them to real careers, qualifications, institutions, and bursaries.",
     description:
-      "Khetha is an Expo (React Native) mobile client for DHET’s National Career Advice Portal. It turns fragmented career advice — occupations, SAQA aligned qualifications, public universities and TVET colleges, and bursaries — into a guided journey on the phone. Users can explore the official catalogue, run decision tools (subject choice, career interest profiling, job fit, APS calculator), save favourites, and reach the DHET helpline. The in-app assistant Khetha (Google Gemini via Firebase AI Logic) is grounded on NCAP data through tool calling, so answers come from the catalogue rather than generic model knowledge. The UI and assistant support South Africa’s 11 official languages, with voice input and accessibility features (text scaling, high contrast, hands free listen triggers). Offline caching keeps core directory content usable when connectivity is poor. Built for the GovTech 2026 hackathon context as a production shaped prototype: TypeScript throughout, Firebase Auth/Firestore/Functions, and EAS builds for Android.",
+      "Khetha is an Expo (React Native) mobile client for DHET’s National Career Advice Portal. It turns fragmented career advice (occupations, SAQA aligned qualifications, public universities and TVET colleges, and bursaries) into a guided journey on the phone. Users can explore the official catalogue, run decision tools (subject choice, career interest profiling, job fit, APS calculator), save favourites, and reach the DHET helpline. The in-app assistant Khetha (Google Gemini via Firebase AI Logic) is grounded on NCAP data through tool calling, so answers come from the catalogue rather than generic model knowledge. The UI and assistant support South Africa’s 11 official languages, with voice input and accessibility features (text scaling, high contrast, hands free listen triggers). Offline caching keeps core directory content usable when connectivity is poor. Built for the GovTech 2026 hackathon context as a production shaped prototype: TypeScript throughout, Firebase Auth/Firestore/Functions, and EAS builds for Android.",
     tags: ["Mobile App", "GovTech", "Expo", "AI"],
     thumb: "media/KhethaScreen1.png",
     marquee: true,
@@ -44,7 +44,7 @@ const PROJECTS = [
     name: "SPES",
     blurb: "An AI-powered browser extension that tracks job applications, keeps a search streak, and tailors CVs, cover letters, and form fills to each role.",
     description:
-      "SPES is my first browser extension — I built it to learn how extensions work and what they can actually do, while solving a problem I kept running into. It's an AI-powered job application tracker that keeps the whole search in one place: save, manage, and track every application, with a streak that shows how consistently you've been applying. For each role, SPES tailors your CV and cover letter to that job's requirements and description, then auto-fills application forms from your profile and saved information so the repetitive parts of applying take less time.",
+      "SPES is my first browser extension. I built it to learn how extensions work and what they can actually do, while solving a problem I kept running into. It's an AI-powered job application tracker that keeps the whole search in one place: save, manage, and track every application, with a streak that shows how consistently you've been applying. For each role, SPES tailors your CV and cover letter to that job's requirements and description, then auto-fills application forms from your profile and saved information so the repetitive parts of applying take less time.",
     tags: ["Browser Extension", "AI", "Productivity"],
     thumb: "media/SpesLogo.png",
     gallery: [
@@ -67,7 +67,7 @@ const PROJECTS = [
     name: "FluentEdge",
     blurb: "A teaching website built for an online English teacher to run lessons, manage students, and showcase her tutoring brand.",
     description:
-      "FluentEdge is a website I built for my sister, who teaches English online. The goal was a clean, professional front door for her tutoring business — something she can send to prospective students that immediately signals credibility, alongside the practical tools she needs to run lessons day to day.",
+      "FluentEdge is a website I built for my sister, who teaches English online. The goal was a clean, professional front door for her tutoring business: something she can send to prospective students that immediately signals credibility, alongside the practical tools she needs to run lessons day to day.",
     tags: ["Web App", "React", "Design"],
     thumb: "media/FluentEdgeThumbnail.png",
     gallery: [
@@ -86,9 +86,9 @@ const PROJECTS = [
     slug: "bertrand-cafe",
     kicker: "Web Design · Hospitality · Johannesburg",
     name: "Bertrand Café",
-    blurb: "A website for Bertrand Café — a French-inspired café, restaurant, and jazz lounge in Maboneng, Johannesburg.",
+    blurb: "A website for Bertrand Café, a French-inspired café, restaurant, and jazz lounge in Maboneng, Johannesburg.",
     description:
-      "Bertrand Café sits on Fox Street in Maboneng as part café, part restaurant, part jazz lounge — a Parisian-influenced spot founded by French-Congolese owners who brought Latin Quarter café culture to Joburg. The site needed to carry that same warmth online: morning coffee and croissants on the patio, French-African plates through the day, and evenings of live jazz, karaoke, and wine nights. Built as a clean front door for the venue so visitors can get a feel for the space, the menu, and what's on before they arrive.",
+      "Bertrand Café sits on Fox Street in Maboneng as part café, part restaurant, part jazz lounge: a Parisian-influenced spot founded by French-Congolese owners who brought Latin Quarter café culture to Joburg. The site needed to carry that same warmth online: morning coffee and croissants on the patio, French-African plates through the day, and evenings of live jazz, karaoke, and wine nights. Built as a clean front door for the venue so visitors can get a feel for the space, the menu, and what's on before they arrive.",
     tags: ["Web Design", "Hospitality", "Johannesburg"],
     thumb: "media/BertrandCafeThumbnail.png",
     gallery: [
@@ -108,9 +108,9 @@ const PROJECTS = [
     slug: "roomiematch",
     kicker: "Web App · PropTech · South Africa",
     name: "RoomieMatch ZA",
-    blurb: "A platform that helps tenants find places and compatible roommates — and helps landlords vet applicants with verified income.",
+    blurb: "A platform that helps tenants find places and compatible roommates, and helps landlords vet applicants with verified income.",
     description:
-      "RoomieMatch ZA is built for the South African rental market: tenants browse listings across major cities, set preferences around lifestyle, budget, and location, then review roommate profiles before deciding who they actually want to live with. On the landlord side, the platform isn't just another listings board — landlords can screen potential tenants with verified income checks, so they spend less time chasing unreliable applications and more time placing people who can actually pay rent. The goal is a clearer match on both sides of the lease.",
+      "RoomieMatch ZA is built for the South African rental market: tenants browse listings across major cities, set preferences around lifestyle, budget, and location, then review roommate profiles before deciding who they actually want to live with. On the landlord side, the platform isn't just another listings board. Landlords can screen potential tenants with verified income checks, so they spend less time chasing unreliable applications and more time placing people who can actually pay rent. The goal is a clearer match on both sides of the lease.",
     tags: ["Web App", "PropTech", "React"],
     thumb: "media/NewHomeThumbnail.png",
     gallery: [
@@ -129,9 +129,9 @@ const PROJECTS = [
     slug: "shakers-cocktail-bar",
     kicker: "Web Design · Nightlife · Johannesburg",
     name: "Shakers Cocktail Bar",
-    blurb: "A website for Shakers — a cocktail and nightlife venue in Maboneng / Jeppestown, Johannesburg.",
+    blurb: "A website for Shakers, a cocktail and nightlife venue in Maboneng / Jeppestown, Johannesburg.",
     description:
-      "Shakers Cocktail Bar has been a fixture of the Maboneng nightlife scene since 2016 — cocktails, food, music, and late nights on Commissioner Street. The site was designed to match that energy: a clear look at the venue, the vibe, and enough information for first-timers and regulars to know what they're walking into. Focused on atmosphere and discoverability so the bar's online presence keeps pace with what happens on the floor.",
+      "Shakers Cocktail Bar has been a fixture of the Maboneng nightlife scene since 2016: cocktails, food, music, and late nights on Commissioner Street. The site was designed to match that energy: a clear look at the venue, the vibe, and enough information for first-timers and regulars to know what they're walking into. Focused on atmosphere and discoverability so the bar's online presence keeps pace with what happens on the floor.",
     tags: ["Web Design", "Nightlife", "Johannesburg"],
     thumb: "media/ShakersThumbnail.png",
     gallery: [
@@ -151,9 +151,9 @@ const PROJECTS = [
     slug: "six-cocktail-bar",
     kicker: "Web Design · Nightlife · Johannesburg",
     name: "SIX Cocktail Bar",
-    blurb: "A website for SIX — a long-running cocktail bar and restaurant in Melville, Johannesburg.",
+    blurb: "A website for SIX, a long-running cocktail bar and restaurant in Melville, Johannesburg.",
     description:
-      "SIX Cocktail Bar is one of Melville's best-known cocktail spots — dozens of drinks on the menu, long happy hours, food late into the night, and a regular crowd that treats it as a neighbourhood staple. The website gives the bar a polished digital presence that reflects the venue: cocktails front and centre, enough atmosphere to feel like Melville, and a straightforward path for visitors to learn about the place before they show up on 3rd Avenue.",
+      "SIX Cocktail Bar is one of Melville's best-known cocktail spots: dozens of drinks on the menu, long happy hours, food late into the night, and a regular crowd that treats it as a neighbourhood staple. The website gives the bar a polished digital presence that reflects the venue: cocktails front and centre, enough atmosphere to feel like Melville, and a straightforward path for visitors to learn about the place before they show up on 3rd Avenue.",
     tags: ["Web Design", "Nightlife", "Johannesburg"],
     thumb: "media/SixCocktailBarThumbnail.png",
     gallery: [
@@ -211,7 +211,7 @@ const PROJECTS = [
     slug: "muni-report-pro",
     kicker: "Mobile App · Civic Tech",
     name: "Muni Report Pro",
-    blurb: "A mobile app that lets residents report service delivery issues — potholes, power outages, broken streetlights — in a few taps.",
+    blurb: "A mobile app that lets residents report service delivery issues (potholes, power outages, broken streetlights) in a few taps.",
     description:
       "Built to lower the friction of reporting municipal issues. Instead of navigating a call centre or a clunky web form, residents can flag a pothole, outage, or broken streetlight from their phone in a few taps, making it far more likely the issue actually gets reported.",
     tags: ["Flutter"],
@@ -253,7 +253,7 @@ const PROJECTS = [
     name: "Blanco Website",
     blurb: "A modern web application showcasing clean design and a user-friendly interface.",
     description:
-      "A design-focused build centred on clarity — clean layout, restrained palette, and a straightforward interface that puts the client's content first.",
+      "A design-focused build centred on clarity: clean layout, restrained palette, and a straightforward interface that puts the client's content first.",
     tags: ["Web Design", "HTML", "CSS"],
     thumb: "media/BlancoThumbnail.png",
     gallery: [
@@ -354,7 +354,7 @@ const PROJECTS = [
     name: "Wakimania",
     blurb: "A playful multiplayer party game that bundles quick social mini-games, including Heads Up-style charades, into one shared room experience.",
     description:
-      "Wakimania is a fun multiplayer party game app designed to get a group playing together quickly. Players can create or join a room, gather in a shared lobby, and compete across a bundle of fast mini-games — including Heads Up-style charades and trivia rounds. The app keeps everyone in sync with room codes, live player lists, answer selection, countdown timers, and an ongoing leaderboard, turning a phone-based game session into a lively group event.",
+      "Wakimania is a fun multiplayer party game app designed to get a group playing together quickly. Players can create or join a room, gather in a shared lobby, and compete across a bundle of fast mini-games, including Heads Up-style charades and trivia rounds. The app keeps everyone in sync with room codes, live player lists, answer selection, countdown timers, and an ongoing leaderboard, turning a phone-based game session into a lively group event.",
     tags: ["Mobile App", "Multiplayer", "Game"],
     thumb: "media/WakiManiaScreen1.png",
     marquee: true,

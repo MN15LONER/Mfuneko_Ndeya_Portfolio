@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Project — Mfuneko Ndeya</title>
+  <title id="page-title">Project | Mfuneko Ndeya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
@@ -53,13 +53,13 @@
         root.innerHTML = `
           <div class="container not-found">
             <h2 class="section-title">Project not found</h2>
-            <p class="section-desc" style="margin:0 auto 1.5rem;">That project doesn't exist yet — or the link is out of date.</p>
+            <p class="section-desc" style="margin:0 auto 1.5rem;">That project doesn't exist yet, or the link is out of date.</p>
             <a href="../index.html#projects" class="btn btn-primary">Back to projects</a>
           </div>`;
         return;
       }
 
-      document.getElementById("page-title").textContent = project.name + " — Mfuneko Ndeya";
+      document.getElementById("page-title").textContent = project.name + " | Mfuneko Ndeya";
 
       const galleryItemsHtml = project.gallery
         .map((item, i) => {
