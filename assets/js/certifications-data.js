@@ -5,6 +5,12 @@
 
 const CERTIFICATIONS = [
   {
+    title: "AI for Africa Challenge — 1st Runner-Up",
+    issuer: "Vodacom · University of Johannesburg · AWS",
+    category: "Hackathon",
+    file: "certifications/vodacom-ai-for-africa.png"
+  },
+  {
     title: "Hack<IT> 2026",
     issuer: "Entelect",
     category: "Hackathon",
