@@ -58,11 +58,7 @@ function renderProjectGrid(containerId, track) {
 
   const list = PROJECTS.filter((p) => (p.track || "default") === (track || "default"));
   if (!list.length) {
-    const empty =
-      track === "cyber"
-        ? "Security labs and writeups will show up here."
-        : "No projects in this section yet.";
-    el.innerHTML = `<p class="projects-empty">${empty}</p>`;
+    el.innerHTML = track === "cyber" ? "" : `<p class="projects-empty">No projects in this section yet.</p>`;
     return;
   }
 
